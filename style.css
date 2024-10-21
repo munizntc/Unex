@@ -1,0 +1,116 @@
+/* Estilo geral do body */
+body {
+    background: linear-gradient(135deg, #007bff, #0056b3); /* Gradiente de azul para azul */
+    font-family: 'Roboto', sans-serif;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Ajuste para alinhar o conteúdo ao topo da página */
+    min-height: 100vh;
+    overflow-y: auto; /* Permite rolagem vertical */
+}
+
+/* Container principal */
+.container {
+    background-color: #f0f4f8; /* Cor de fundo clara para o container */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-in-out;
+    color: #333333; /* Texto escuro */
+}
+
+/* Container aparecendo com animação */
+.container.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Título da página */
+h2 {
+    color: #007bff; /* Azul padrão para o título */
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: all 0.6s ease-in-out;
+}
+
+/* Quando o título estiver visível */
+h2.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Botão principal */
+.btn-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3); /* Gradiente suave de azul */
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    color: #ffffff; /* Texto branco */
+}
+
+/* Animação do hover do botão */
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: scale(1.05); /* Efeito de zoom suave */
+}
+
+/* Cor do botão quando pressionado */
+.btn-primary.pressed {
+    background: #6c757d; /* Cinza */
+    transform: scale(1); /* Remove o efeito de zoom */
+}
+
+/* Lista de feriados */
+#feriados {
+    margin-top: 30px;
+    text-align: left;
+}
+
+/* Estilo dos feriados */
+.feriado {
+    background-color: #f8f9fa; /* Cinza claro */
+    color: #333333; /* Texto escuro */
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.4s ease;
+}
+
+/* Animação de cascata dos feriados */
+.feriado.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .btn-primary {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+}
